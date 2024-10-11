@@ -162,13 +162,13 @@ extern "C" {
 #undef org_lwjgl_opengl_WindowsDisplay_ICON_BIG
 #define org_lwjgl_opengl_WindowsDisplay_ICON_BIG 1L
 #undef org_lwjgl_opengl_WindowsDisplay_HWND_TOP
-#define org_lwjgl_opengl_WindowsDisplay_HWND_TOP 0i64
+#define org_lwjgl_opengl_WindowsDisplay_HWND_TOP 0LL
 #undef org_lwjgl_opengl_WindowsDisplay_HWND_BOTTOM
-#define org_lwjgl_opengl_WindowsDisplay_HWND_BOTTOM 1i64
+#define org_lwjgl_opengl_WindowsDisplay_HWND_BOTTOM 1LL
 #undef org_lwjgl_opengl_WindowsDisplay_HWND_TOPMOST
-#define org_lwjgl_opengl_WindowsDisplay_HWND_TOPMOST -1i64
+#define org_lwjgl_opengl_WindowsDisplay_HWND_TOPMOST -1LL
 #undef org_lwjgl_opengl_WindowsDisplay_HWND_NOTOPMOST
-#define org_lwjgl_opengl_WindowsDisplay_HWND_NOTOPMOST -2i64
+#define org_lwjgl_opengl_WindowsDisplay_HWND_NOTOPMOST -2LL
 #undef org_lwjgl_opengl_WindowsDisplay_SWP_NOSIZE
 #define org_lwjgl_opengl_WindowsDisplay_SWP_NOSIZE 1L
 #undef org_lwjgl_opengl_WindowsDisplay_SWP_NOMOVE

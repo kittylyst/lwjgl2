@@ -8,30 +8,30 @@ import java.nio.*;
 public final class NVVertexProgram extends NVProgram {
 
 	/**
-	 *          Accepted by the &lt;cap&gt; parameter of Disable, Enable, and IsEnabled,
-	 *          and by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv, GetFloatv,
-	 *          and GetDoublev, and by the &lt;target&gt; parameter of BindProgramNV,
-	 *          ExecuteProgramNV, GetProgramParameter[df]vNV, GetTrackMatrixivNV,
-	 *          LoadProgramNV, ProgramParameter[s]4[df][v]NV, and TrackMatrixNV:
+	 * 	 Accepted by the &lt;cap&gt; parameter of Disable, Enable, and IsEnabled,
+	 * 	 and by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv, GetFloatv,
+	 * 	 and GetDoublev, and by the &lt;target&gt; parameter of BindProgramNV,
+	 * 	 ExecuteProgramNV, GetProgramParameter[df]vNV, GetTrackMatrixivNV,
+	 * 	 LoadProgramNV, ProgramParameter[s]4[df][v]NV, and TrackMatrixNV:
 	 */
 	public static final int GL_VERTEX_PROGRAM_NV = 0x8620;
 
 	/**
-	 *          Accepted by the &lt;cap&gt; parameter of Disable, Enable, and IsEnabled,
-	 *          and by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv, GetFloatv,
-	 *          and GetDoublev:
+	 * 	 Accepted by the &lt;cap&gt; parameter of Disable, Enable, and IsEnabled,
+	 * 	 and by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv, GetFloatv,
+	 * 	 and GetDoublev:
 	 */
 	public static final int GL_VERTEX_PROGRAM_POINT_SIZE_NV = 0x8642,
 		GL_VERTEX_PROGRAM_TWO_SIDE_NV = 0x8643;
 
 	/**
-	 *          Accepted by the &lt;target&gt; parameter of ExecuteProgramNV and
-	 *          LoadProgramNV:
+	 * 	 Accepted by the &lt;target&gt; parameter of ExecuteProgramNV and
+	 * 	 LoadProgramNV:
 	 */
 	public static final int GL_VERTEX_STATE_PROGRAM_NV = 0x8621;
 
 	/**
-	 *          Accepted by the &lt;pname&gt; parameter of GetVertexAttrib[dfi]vNV:
+	 * 	 Accepted by the &lt;pname&gt; parameter of GetVertexAttrib[dfi]vNV:
 	 */
 	public static final int GL_ATTRIB_ARRAY_SIZE_NV = 0x8623,
 		GL_ATTRIB_ARRAY_STRIDE_NV = 0x8624,
@@ -39,25 +39,25 @@ public final class NVVertexProgram extends NVProgram {
 		GL_CURRENT_ATTRIB_NV = 0x8626;
 
 	/**
-	 *          Accepted by the &lt;pname&gt; parameter of GetProgramParameterfvNV
-	 *          and GetProgramParameterdvNV:
+	 * 	 Accepted by the &lt;pname&gt; parameter of GetProgramParameterfvNV
+	 * 	 and GetProgramParameterdvNV:
 	 */
 	public static final int GL_PROGRAM_PARAMETER_NV = 0x8644;
 
 	/**
-	 *          Accepted by the &lt;pname&gt; parameter of GetVertexAttribPointervNV:
+	 * 	 Accepted by the &lt;pname&gt; parameter of GetVertexAttribPointervNV:
 	 */
 	public static final int GL_ATTRIB_ARRAY_POINTER_NV = 0x8645;
 
 	/**
-	 *          Accepted by the &lt;pname&gt; parameter of GetTrackMatrixivNV:
+	 * 	 Accepted by the &lt;pname&gt; parameter of GetTrackMatrixivNV:
 	 */
 	public static final int GL_TRACK_MATRIX_NV = 0x8648,
 		GL_TRACK_MATRIX_TRANSFORM_NV = 0x8649;
 
 	/**
-	 *          Accepted by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv,
-	 *          GetFloatv, and GetDoublev:
+	 * 	 Accepted by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv,
+	 * 	 GetFloatv, and GetDoublev:
 	 */
 	public static final int GL_MAX_TRACK_MATRIX_STACK_DEPTH_NV = 0x862E,
 		GL_MAX_TRACK_MATRICES_NV = 0x862F,
@@ -66,13 +66,13 @@ public final class NVVertexProgram extends NVProgram {
 		GL_VERTEX_PROGRAM_BINDING_NV = 0x864A;
 
 	/**
-	 *          Accepted by the &lt;matrix&gt; parameter of TrackMatrixNV:
+	 * 	 Accepted by the &lt;matrix&gt; parameter of TrackMatrixNV:
 	 */
 	public static final int GL_MODELVIEW_PROJECTION_NV = 0x8629;
 
 	/**
-	 *          Accepted by the &lt;matrix&gt; parameter of TrackMatrixNV and by the
-	 *          &lt;mode&gt; parameter of MatrixMode:
+	 * 	 Accepted by the &lt;matrix&gt; parameter of TrackMatrixNV and by the
+	 * 	 &lt;mode&gt; parameter of MatrixMode:
 	 */
 	public static final int GL_MATRIX0_NV = 0x8630,
 		GL_MATRIX1_NV = 0x8631,
@@ -84,7 +84,7 @@ public final class NVVertexProgram extends NVProgram {
 		GL_MATRIX7_NV = 0x8637;
 
 	/**
-	 *          Accepted by the &lt;transform&gt; parameter of TrackMatrixNV:
+	 * 	 Accepted by the &lt;transform&gt; parameter of TrackMatrixNV:
 	 */
 	public static final int GL_IDENTITY_NV = 0x862A,
 		GL_INVERSE_NV = 0x862B,
@@ -92,10 +92,10 @@ public final class NVVertexProgram extends NVProgram {
 		GL_INVERSE_TRANSPOSE_NV = 0x862D;
 
 	/**
-	 *          Accepted by the &lt;array&gt; parameter of EnableClientState and
-	 *          DisableClientState, by the &lt;cap&gt; parameter of IsEnabled, and by
-	 *          the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv, GetFloatv, and
-	 *          GetDoublev:
+	 * 	 Accepted by the &lt;array&gt; parameter of EnableClientState and
+	 * 	 DisableClientState, by the &lt;cap&gt; parameter of IsEnabled, and by
+	 * 	 the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv, GetFloatv, and
+	 * 	 GetDoublev:
 	 */
 	public static final int GL_VERTEX_ATTRIB_ARRAY0_NV = 0x8650,
 		GL_VERTEX_ATTRIB_ARRAY1_NV = 0x8651,
@@ -115,10 +115,10 @@ public final class NVVertexProgram extends NVProgram {
 		GL_VERTEX_ATTRIB_ARRAY15_NV = 0x865F;
 
 	/**
-	 *          Accepted by the &lt;target&gt; parameter of GetMapdv, GetMapfv, GetMapiv,
-	 *          Map1d and Map1f and by the &lt;cap&gt; parameter of Enable, Disable, and
-	 *          IsEnabled, and by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv,
-	 *          GetFloatv, and GetDoublev:
+	 * 	 Accepted by the &lt;target&gt; parameter of GetMapdv, GetMapfv, GetMapiv,
+	 * 	 Map1d and Map1f and by the &lt;cap&gt; parameter of Enable, Disable, and
+	 * 	 IsEnabled, and by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv,
+	 * 	 GetFloatv, and GetDoublev:
 	 */
 	public static final int GL_MAP1_VERTEX_ATTRIB0_4_NV = 0x8660,
 		GL_MAP1_VERTEX_ATTRIB1_4_NV = 0x8661,
@@ -138,10 +138,10 @@ public final class NVVertexProgram extends NVProgram {
 		GL_MAP1_VERTEX_ATTRIB15_4_NV = 0x866F;
 
 	/**
-	 *          Accepted by the &lt;target&gt; parameter of GetMapdv, GetMapfv, GetMapiv,
-	 *          Map2d and Map2f and by the &lt;cap&gt; parameter of Enable, Disable, and
-	 *          IsEnabled, and by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv,
-	 *          GetFloatv, and GetDoublev:
+	 * 	 Accepted by the &lt;target&gt; parameter of GetMapdv, GetMapfv, GetMapiv,
+	 * 	 Map2d and Map2f and by the &lt;cap&gt; parameter of Enable, Disable, and
+	 * 	 IsEnabled, and by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv,
+	 * 	 GetFloatv, and GetDoublev:
 	 */
 	public static final int GL_MAP2_VERTEX_ATTRIB0_4_NV = 0x8670,
 		GL_MAP2_VERTEX_ATTRIB1_4_NV = 0x8671,

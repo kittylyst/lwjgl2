@@ -1,2 +1,5 @@
+*.iml
+.idea/
+src/native/generated/
 *.class
 .DS_Store

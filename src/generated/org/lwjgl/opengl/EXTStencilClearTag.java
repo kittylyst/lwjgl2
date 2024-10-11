@@ -8,8 +8,8 @@ import java.nio.*;
 public final class EXTStencilClearTag {
 
 	/**
-	 *          Accepted by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv,
-	 *          GetFloatv, and GetDoublev.
+	 * 	 Accepted by the &lt;pname&gt; parameter of GetBooleanv, GetIntegerv,
+	 * 	 GetFloatv, and GetDoublev.
 	 */
 	public static final int GL_STENCIL_TAG_BITS_EXT = 0x88F2,
 		GL_STENCIL_CLEAR_TAG_VALUE_EXT = 0x88F3;
@@ -17,9 +17,9 @@ public final class EXTStencilClearTag {
 	private EXTStencilClearTag() {}
 
 	/**
-	 *          Controls the stencil clear tag state. stencilTagBits is a count of
-	 *          the number of most-significant stencil buffer bits involved in the
-	 *          stencil clear tag update.
+	 * 	 Controls the stencil clear tag state. stencilTagBits is a count of
+	 * 	 the number of most-significant stencil buffer bits involved in the
+	 * 	 stencil clear tag update.
 	 */
 	public static void glStencilClearTagEXT(int stencilTagBits, int stencilClearTag) {
 		ContextCapabilities caps = GLContext.getCapabilities();

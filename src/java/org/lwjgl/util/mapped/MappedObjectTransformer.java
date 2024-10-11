@@ -37,8 +37,7 @@ import org.lwjgl.MemoryUtil;
 import org.objectweb.asm.*;
 import org.objectweb.asm.tree.*;
 import org.objectweb.asm.tree.analysis.*;
-import org.objectweb.asm.tree.analysis.Frame;
-import org.objectweb.asm.util.TraceClassVisitor;
+import org.objectweb.asm.util.*;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -265,7 +264,7 @@ public class MappedObjectTransformer {
 	static byte[] transformMappedObject(byte[] bytecode) {
 		final ClassWriter cw = new ClassWriter(0);
 
-		ClassVisitor cv = new ClassAdapter(cw) {
+		ClassVisitor cv = new CheckClassAdapter(cw) {
 
 			private final String[] DEFINALIZE_LIST = {
 				VIEWADDRESS_METHOD_NAME,
@@ -322,8 +321,8 @@ public class MappedObjectTransformer {
 		return bytecode;
 	}
 
-	private static ClassAdapter getMethodGenAdapter(final String className, final ClassVisitor cv) {
-		return new ClassAdapter(cv) {
+	private static CheckClassAdapter getMethodGenAdapter(final String className, final ClassVisitor cv) {
+		return new CheckClassAdapter(cv) {
 
 			@Override
 			public void visitEnd() {
@@ -493,7 +492,7 @@ public class MappedObjectTransformer {
 		};
 	}
 
-	private static class TransformationAdapter extends ClassAdapter {
+	private static class TransformationAdapter extends CheckClassAdapter {
 
 		final String className;
 

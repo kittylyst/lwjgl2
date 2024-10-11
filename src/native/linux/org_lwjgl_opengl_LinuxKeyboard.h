@@ -10,11 +10,11 @@ extern "C" {
 #undef org_lwjgl_opengl_LinuxKeyboard_LockMapIndex
 #define org_lwjgl_opengl_LinuxKeyboard_LockMapIndex 1L
 #undef org_lwjgl_opengl_LinuxKeyboard_NoSymbol
-#define org_lwjgl_opengl_LinuxKeyboard_NoSymbol 0i64
+#define org_lwjgl_opengl_LinuxKeyboard_NoSymbol 0LL
 #undef org_lwjgl_opengl_LinuxKeyboard_ShiftMask
-#define org_lwjgl_opengl_LinuxKeyboard_ShiftMask 1i64
+#define org_lwjgl_opengl_LinuxKeyboard_ShiftMask 1LL
 #undef org_lwjgl_opengl_LinuxKeyboard_LockMask
-#define org_lwjgl_opengl_LinuxKeyboard_LockMask 2i64
+#define org_lwjgl_opengl_LinuxKeyboard_LockMask 2LL
 #undef org_lwjgl_opengl_LinuxKeyboard_XLookupChars
 #define org_lwjgl_opengl_LinuxKeyboard_XLookupChars 2L
 #undef org_lwjgl_opengl_LinuxKeyboard_XLookupBoth

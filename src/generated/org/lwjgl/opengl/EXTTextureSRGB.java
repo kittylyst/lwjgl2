@@ -8,8 +8,8 @@ import java.nio.*;
 public final class EXTTextureSRGB {
 
 	/**
-	 *          Accepted by the &lt;internalformat&gt; parameter of TexImage1D, TexImage2D,
-	 *          TexImage3D, CopyTexImage1D, CopyTexImage2D.
+	 * 	 Accepted by the &lt;internalformat&gt; parameter of TexImage1D, TexImage2D,
+	 * 	 TexImage3D, CopyTexImage1D, CopyTexImage2D.
 	 */
 	public static final int GL_SRGB_EXT = 0x8C40,
 		GL_SRGB8_EXT = 0x8C41,
@@ -25,9 +25,9 @@ public final class EXTTextureSRGB {
 		GL_COMPRESSED_SLUMINANCE_ALPHA_EXT = 0x8C4B;
 
 	/**
-	 *          Accepted by the &lt;internalformat&gt; parameter of TexImage2D,
-	 *          CopyTexImage2D, and CompressedTexImage2DARB and the &lt;format&gt; parameter
-	 *          of CompressedTexSubImage2DARB.
+	 * 	 Accepted by the &lt;internalformat&gt; parameter of TexImage2D,
+	 * 	 CopyTexImage2D, and CompressedTexImage2DARB and the &lt;format&gt; parameter
+	 * 	 of CompressedTexSubImage2DARB.
 	 */
 	public static final int GL_COMPRESSED_SRGB_S3TC_DXT1_EXT = 0x8C4C,
 		GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT = 0x8C4D,

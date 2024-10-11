@@ -20,13 +20,13 @@ extern "C" {
 #undef org_lwjgl_opengles_EGLKHRReusableSync_EGL_SYNC_FLUSH_COMMANDS_BIT_KHR
 #define org_lwjgl_opengles_EGLKHRReusableSync_EGL_SYNC_FLUSH_COMMANDS_BIT_KHR 1L
 #undef org_lwjgl_opengles_EGLKHRReusableSync_EGL_FOREVER_KHR
-#define org_lwjgl_opengles_EGLKHRReusableSync_EGL_FOREVER_KHR -1i64
+#define org_lwjgl_opengles_EGLKHRReusableSync_EGL_FOREVER_KHR -1LL
 #undef org_lwjgl_opengles_EGLKHRReusableSync_EGL_TIMEOUT_EXPIRED_KHR
 #define org_lwjgl_opengles_EGLKHRReusableSync_EGL_TIMEOUT_EXPIRED_KHR 12533L
 #undef org_lwjgl_opengles_EGLKHRReusableSync_EGL_CONDITION_SATISFIED_KHR
 #define org_lwjgl_opengles_EGLKHRReusableSync_EGL_CONDITION_SATISFIED_KHR 12534L
 #undef org_lwjgl_opengles_EGLKHRReusableSync_EGL_NO_SYNC_KHR
-#define org_lwjgl_opengles_EGLKHRReusableSync_EGL_NO_SYNC_KHR 0i64
+#define org_lwjgl_opengles_EGLKHRReusableSync_EGL_NO_SYNC_KHR 0LL
 /*
  * Class:     org_lwjgl_opengles_EGLKHRReusableSync
  * Method:    initNativeStubs

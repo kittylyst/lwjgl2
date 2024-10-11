@@ -7,7 +7,7 @@
 	<import file="platform_build/build-applet.xml"/>
 	<import file="platform_build/build-webstart.xml"/>
 	<import file="platform_build/build-maven.xml"/>
-	<import file="eclipse-update/org.lwjgl.build/build-updatesite.xml"/>
+	<!-- <import file="eclipse-update/org.lwjgl.build/build-updatesite.xml"/> -->
 
 	<!-- ================================================================== -->
 	<!-- Everything below this line is targets.								-->
@@ -462,7 +462,7 @@
 
 	<!-- Compiles the Java source code -->
 	<target name="compile" description="Compiles the java source code" depends="-initialize">
-		<javac debug="yes" destdir="${lwjgl.bin}" source="1.5" target="1.5" classpath="${lwjgl.lib}/jinput.jar:${lwjgl.lib}/AppleJavaExtensions.jar:${lwjgl.lib}/asm-debug-all.jar" taskname="core">
+		<javac debug="yes" destdir="${lwjgl.bin}" source="1.5" target="1.5" classpath="${lwjgl.lib}/jinput.jar:${lwjgl.lib}/AppleJavaExtensions.jar:${lwjgl.lib}/asm-6.2.1.jar:${lwjgl.lib}/asm-tree-6.2.1.jar:${lwjgl.lib}/asm-util-6.2.1.jar:${lwjgl.lib}/asm-analysis-6.2.1.jar" taskname="core">
             <!--<compilerarg value="-Xlint:unchecked"/>-->
 			<src path="${lwjgl.src}/java/"/>
 			<src path="${lwjgl.src}/generated/"/>

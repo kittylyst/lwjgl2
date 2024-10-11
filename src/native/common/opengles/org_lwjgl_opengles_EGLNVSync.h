@@ -18,7 +18,7 @@ extern "C" {
 #undef org_lwjgl_opengles_EGLNVSync_EGL_SYNC_FLUSH_COMMANDS_BIT_NV
 #define org_lwjgl_opengles_EGLNVSync_EGL_SYNC_FLUSH_COMMANDS_BIT_NV 1L
 #undef org_lwjgl_opengles_EGLNVSync_EGL_FOREVER_NV
-#define org_lwjgl_opengles_EGLNVSync_EGL_FOREVER_NV -1i64
+#define org_lwjgl_opengles_EGLNVSync_EGL_FOREVER_NV -1LL
 #undef org_lwjgl_opengles_EGLNVSync_EGL_ALREADY_SIGNALED_NV
 #define org_lwjgl_opengles_EGLNVSync_EGL_ALREADY_SIGNALED_NV 12522L
 #undef org_lwjgl_opengles_EGLNVSync_EGL_TIMEOUT_EXPIRED_NV
@@ -32,7 +32,7 @@ extern "C" {
 #undef org_lwjgl_opengles_EGLNVSync_EGL_SYNC_FENCE_NV
 #define org_lwjgl_opengles_EGLNVSync_EGL_SYNC_FENCE_NV 12527L
 #undef org_lwjgl_opengles_EGLNVSync_EGL_NO_SYNC_NV
-#define org_lwjgl_opengles_EGLNVSync_EGL_NO_SYNC_NV 0i64
+#define org_lwjgl_opengles_EGLNVSync_EGL_NO_SYNC_NV 0LL
 /*
  * Class:     org_lwjgl_opengles_EGLNVSync
  * Method:    initNativeStubs
