@@ -3,3 +3,6 @@
 src/native/generated/
 *.class
 .DS_Store
+*.jar
+bin/
+libs/

@@ -79,7 +79,8 @@ static NSUInteger lastModifierFlags = 0;
 	
 	if (window_info->enableHighDPI) {
 		// call method using runtime selector as its a 10.7+ api and allows compiling on older SDK's
-		[window_info->view performSelector:NSSelectorFromString(@"setWantsBestResolutionOpenGLSurface:") withObject:YES];
+		// FIXME
+		// [window_info->view performSelector:NSSelectorFromString(@"setWantsBestResolutionOpenGLSurface:") withObject:YES];
 	}
 	
 	// set nsapp delegate for catching app quit events
