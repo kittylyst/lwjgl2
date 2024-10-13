@@ -51,7 +51,7 @@ import javax.tools.Diagnostic;
  * @version $Revision$ $Id$
  */
 @SupportedAnnotationTypes({ "*" })
-@SupportedSourceVersion(SourceVersion.RELEASE_6)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 @SupportedOptions({ "binpath", "typemap", "generatechecks", "contextspecific" })
 public class GeneratorProcessor extends AbstractProcessor {
 

@@ -50,7 +50,7 @@ import javax.lang.model.util.ElementFilter;
  * @author Spasi
  */
 @SupportedAnnotationTypes({ "*" })
-@SupportedSourceVersion(SourceVersion.RELEASE_6)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 @SupportedOptions({ "generatechecks", "contextspecific" })
 public class CLGeneratorProcessor extends AbstractProcessor {
 
