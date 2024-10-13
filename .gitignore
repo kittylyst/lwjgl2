@@ -1,6 +1,7 @@
 *.iml
 .idea/
 src/native/generated/
+src/generated/
 *.class
 .DS_Store
 *.jar
