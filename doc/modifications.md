@@ -12,6 +12,8 @@ src/native/macosx/org_lwjgl_opengl_MacOSXContextImplementation.m
 
 Most of these are just conversions from DOS line endings to Unix, but there are some minor code changes.
 
+The source / release of Java 6 has been updated to version 8.
+
 In particular, a couple of functions require a postback onto the UI thread (see https://github.com/libsdl-org/SDL/issues/3507)
 
 Also, the type JAWT_MacOSXDrawingSurfaceInfo is gone, and JAWT_DrawingSurfaceInfo should be used instead.

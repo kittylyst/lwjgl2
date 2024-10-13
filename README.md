@@ -6,6 +6,8 @@ Modern systems, notably modern MacOS cannot run games built on the older library
 
 ## Building
 
+Build using Java 8 (Apple Silicon macs will need a native JDK 8 - currently only available from Azul)
+
 Uses ant (ugh).
 
 ## Supported Systems
