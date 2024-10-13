@@ -2,6 +2,7 @@
 
 Changed files from 2.9.3 baseline:
 
+```
 platform_build/macosx_ant/build-symbol-list
 platform_build/macosx_ant/build.xml
 src/native/common/org_lwjgl_opengl_AWTSurfaceLock.c
@@ -9,6 +10,7 @@ src/native/macosx/context.h
 src/native/macosx/org_lwjgl_opengl_Display.m
 src/native/macosx/org_lwjgl_opengl_MacOSXCanvasPeerInfo.m
 src/native/macosx/org_lwjgl_opengl_MacOSXContextImplementation.m
+```
 
 Most of these are just conversions from DOS line endings to Unix, but there are some minor code changes.
 
@@ -23,9 +25,13 @@ In particular, it uses a generified ASM (which did not occur until ASM6) but als
 
 The code has been tidied up and baselined on ASM 6.2 as a first step.
 
+```
 src/java/org/lwjgl/util/mapped/MappedObjectTransformer.java
+```
 
 ## Linux 
 
+```
 sudo dnf -y install libXcursor-devel
 sudo dnf -y install libXxf86vm-devel
+```

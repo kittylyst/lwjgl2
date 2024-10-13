@@ -13,5 +13,5 @@ Uses ant (ugh).
 ## Supported Systems
 
 * MacOS (tested on 14)
-* ?? Linux
+* Linux (tested on Fedora 39)
 * ?? Windows
