@@ -16,4 +16,9 @@ In particular, a couple of functions require a postback onto the UI thread (see 
 
 Also, the type JAWT_MacOSXDrawingSurfaceInfo is gone, and JAWT_DrawingSurfaceInfo should be used instead.
 
+We also need to clean up the ASM handling. The dependency does not seem to correspond to any standard version of ASM.
+In particular, it uses a generified ASM (which did not occur until ASM6) but also refers to a ClassAdapter type, which was removed in ASM 4. 
 
+The code has been tidied up and baselined on ASM 6 as a first step.
+
+src/java/org/lwjgl/util/mapped/MappedObjectTransformer.java
