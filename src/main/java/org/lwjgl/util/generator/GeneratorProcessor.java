@@ -41,7 +41,6 @@ import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.ElementFilter;
-import javax.tools.Diagnostic;
 
 /**
  * Generator tool for creating the java classes and native code from an
@@ -55,20 +54,20 @@ import javax.tools.Diagnostic;
 @SupportedOptions({ "binpath", "typemap", "generatechecks", "contextspecific" })
 public class GeneratorProcessor extends AbstractProcessor {
 
-	private static boolean first_round = true;
+	private static boolean firstRound = true;
 
 	@Override
 	public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-		if ( roundEnv.processingOver() || !first_round ) {
+		if ( roundEnv.processingOver() || !firstRound) {
 			System.exit(0);
 			return true;
 		}
 		Map<String, String> options = processingEnv.getOptions();
 		String typemap_classname = options.get("typemap");
-		String bin_path = options.get("binpath");
+		String binPath = options.get("binpath");
 		boolean generate_error_checks = options.containsKey("generatechecks");
 		boolean context_specific = options.containsKey("contextspecific");
-		if ( bin_path == null ) {
+		if ( binPath == null ) {
 			throw new RuntimeException("No path specified for the bin directory with -Abinpath=<path>");
 		}
 
@@ -78,13 +77,13 @@ public class GeneratorProcessor extends AbstractProcessor {
 
 		Element lastFile = null;
 		try {
-			long generatorLM = getGeneratorLastModified(bin_path);
+			long generatorLM = getGeneratorLastModified(binPath);
 			TypeMap type_map = (TypeMap)(Class.forName(typemap_classname).newInstance());
 			for ( Iterator<TypeElement> it = ElementFilter.typesIn(roundEnv.getRootElements()).iterator(); it.hasNext(); ) {
 				lastFile = it.next();
 				lastFile.accept(new GeneratorVisitor(processingEnv, type_map, generate_error_checks, context_specific, generatorLM), null);
 			}
-			first_round = false;
+			firstRound = false;
 			return true;
 		} catch (Exception e) {
 			if ( lastFile == null ) {
