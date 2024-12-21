@@ -439,7 +439,7 @@
 	<macrodef name="version-check">
 	  <attribute name="platform"/>
 	  <sequential>
-			<java classname="org.lwjgl.test.NativeTest" logError="false" resultproperty="nativetest.res" outputproperty="nativetest.out" errorproperty="nativetest.err" fork="true">
+			<java classname="org.lwjgl.NativeTest" logError="false" resultproperty="nativetest.res" outputproperty="nativetest.out" errorproperty="nativetest.err" fork="true">
 				<jvmarg value="-Djava.library.path=libs/@{platform}"/>
                 <jvmarg value="-Dorg.lwjgl.util.Debug=true"/>
 	    	<classpath>
