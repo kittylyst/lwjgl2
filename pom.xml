@@ -48,6 +48,15 @@
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.bsc.maven</groupId>
+                    <artifactId>maven-processor-plugin</artifactId>
+                    <version>${maven.processor.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     <plugins>
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -58,6 +67,7 @@
             <release>8</release>
             <source>${maven.compiler.source}</source>
             <target>${maven.compiler.target}</target>
+            <compilerArgument>-proc:none</compilerArgument>
         </configuration>
     </plugin>
         <plugin>
