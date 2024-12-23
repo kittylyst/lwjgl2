@@ -18,13 +18,21 @@
         <!-- Library versions -->
         <junit.version>5.9.2</junit.version>
         <asm.version>6.2.1</asm.version>
-        <jinput.version>2.0.10</jinput.version>
+        <jinput.version>2.0.9</jinput.version>
+
+<!--        Plugin versions  -->
         <maven.compiler.version>3.8.0</maven.compiler.version>
-        <lwjgl.processor.version>2.10.0-SNAPSHOT</lwjgl.processor.version>
+        <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
     </properties>
 
     <dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>lwjgl-generator</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm</artifactId>
@@ -56,19 +64,19 @@
     </dependencyManagement>
 
     <build>
-        <pluginManagement/>
+        <pluginManagement>
         <plugins>
-<!--        <plugin>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-compiler-plugin</artifactId>-->
-<!--            <version>${maven.compiler.version}</version>-->
-<!--            <configuration>-->
-<!--&lt;!&ndash;                <compilerVersion>8</compilerVersion>&ndash;&gt;-->
-<!--&lt;!&ndash;                <release>8</release>&ndash;&gt;-->
-<!--                <source>${maven.compiler.source}</source>-->
-<!--                <target>${maven.compiler.target}</target>-->
-<!--            </configuration>-->
-<!--        </plugin>-->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin.version}</version>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>${maven-jar-plugin.version}</version>
+        </plugin>
         </plugins>
+        </pluginManagement>
     </build>
 </project>

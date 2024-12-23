@@ -11,9 +11,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.lwjgl</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>lwjgl-generator</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
@@ -59,14 +58,12 @@
                         <artifactId>lwjgl-generator</artifactId>
                         <version>${project.version}</version>
                     </path>
+<!--                    <processors>-->
+<!--                        <processor>org.lwjgl.util.generator.GeneratorProcessor</processor>-->
+<!--                    </processors>-->
+<!--                    <generatedSourcesDirectory>src/main/generated</generatedSourcesDirectory>-->
                 </annotationProcessorPaths>
-<!--            <configuration>-->
-<!--                <outputDirectory>src/main/generated/openal</outputDirectory>-->
-<!--                <processors>-->
-<!--                    <processor>org.lwjgl.util.generator.GeneratorProcessor</processor>-->
-<!--                </processors>-->
 <!--                <compilerArguments>-Abinpath=bin -Atypemap=org.lwjgl.util.generator.openal.ALTypeMap</compilerArguments>-->
-<!--            </configuration>-->
 
             </configuration>
         </plugin>

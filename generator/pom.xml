@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl</artifactId>
@@ -17,7 +18,6 @@
     </dependencies>
 
     <build>
-        <pluginManagement/>
         <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -25,26 +25,27 @@
             <version>${maven.compiler.version}</version>
             <configuration>
 <!--                <compilerVersion>8</compilerVersion>-->
-<!--                <release>8</release>-->
                 <source>${maven.compiler.source}</source>
                 <target>${maven.compiler.target}</target>
-<!--                <annotationProcessorPaths>-->
-<!--                    <path>-->
-<!--                        <groupId>org.lwjgl</groupId>-->
-<!--                        <artifactId>lwjgl-processor</artifactId>-->
-<!--                        <version>${lwjgl.processor.version}</version>-->
-<!--                    </path>-->
-<!--                </annotationProcessorPaths>-->
-<!--            <configuration>-->
-<!--                <outputDirectory>src/main/generated/openal</outputDirectory>-->
-<!--                <processors>-->
-<!--                    <processor>org.lwjgl.util.generator.GeneratorProcessor</processor>-->
-<!--                </processors>-->
-<!--                <compilerArguments>-Abinpath=bin -Atypemap=org.lwjgl.util.generator.openal.ALTypeMap</compilerArguments>-->
-<!--            </configuration>-->
-
+                <proc>none</proc>
             </configuration>
         </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                    <includes>
+                        <include>META-INF/services/javax.annotation.processing.Processor</include>
+                    </includes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
