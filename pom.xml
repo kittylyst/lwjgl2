@@ -14,7 +14,7 @@
         <asm.version>6.2.1</asm.version>
         <jinput.version>2.0.10</jinput.version>
         <maven.compiler.version>3.8.0</maven.compiler.version>
-        <maven.processor.version>5.1</maven.processor.version>
+        <lwjgl.processor.version>2.10.0-SNAPSHOT</lwjgl.processor.version>
     </properties>
     
     <dependencies>
@@ -48,50 +48,34 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.bsc.maven</groupId>
-                    <artifactId>maven-processor-plugin</artifactId>
-                    <version>${maven.processor.version}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    <plugins>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven.compiler.version}</version>
-        <configuration>
-            <compilerVersion>8</compilerVersion>
-            <release>8</release>
-            <source>${maven.compiler.source}</source>
-            <target>${maven.compiler.target}</target>
-            <compilerArgument>-proc:none</compilerArgument>
-        </configuration>
-    </plugin>
+        <pluginManagement/>
+        <plugins>
         <plugin>
-            <groupId>org.bsc.maven</groupId>
-            <artifactId>maven-processor-plugin</artifactId>
-            <version>${maven.processor.version}</version>
-            <executions>
-                <execution>
-                    <id>process</id>
-                    <goals>
-                        <goal>process</goal>
-                    </goals>
-                    <phase>generate-sources</phase>
-                    <configuration>
-                        <outputDirectory>src/main/generated/openal</outputDirectory>
-                        <processors>
-                            <processor>org.lwjgl.util.generator.GeneratorProcessor</processor>
-                        </processors>
-                        <compilerArguments>-Abinpath=bin -Atypemap=org.lwjgl.util.generator.openal.ALTypeMap</compilerArguments>
-                    </configuration>
-                </execution>
-            </executions>
-            <dependencies/>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven.compiler.version}</version>
+            <configuration>
+                <compilerVersion>8</compilerVersion>
+                <release>8</release>
+                <source>${maven.compiler.source}</source>
+                <target>${maven.compiler.target}</target>
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.lwjgl</groupId>
+                        <artifactId>lwjgl-processor</artifactId>
+                        <version>${lwjgl.processor.version}</version>
+                    </path>
+                </annotationProcessorPaths>
+<!--            <configuration>-->
+<!--                <outputDirectory>src/main/generated/openal</outputDirectory>-->
+<!--                <processors>-->
+<!--                    <processor>org.lwjgl.util.generator.GeneratorProcessor</processor>-->
+<!--                </processors>-->
+<!--                <compilerArguments>-Abinpath=bin -Atypemap=org.lwjgl.util.generator.openal.ALTypeMap</compilerArguments>-->
+<!--            </configuration>-->
+
+            </configuration>
         </plugin>
-    </plugins>
+        </plugins>
     </build>
 </project>
