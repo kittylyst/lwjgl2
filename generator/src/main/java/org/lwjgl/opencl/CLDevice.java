@@ -47,7 +47,7 @@ public final class CLDevice extends CLObjectChild<CLDevice> {
 
 	private Object caps;
 
-	CLDevice(final long pointer, final CLPlatform platform) {
+	CLDevice(final long pointer, final org.lwjgl.opencl.CLPlatform platform) {
 		this(pointer, null, platform);
 	}
 
@@ -61,7 +61,7 @@ public final class CLDevice extends CLObjectChild<CLDevice> {
 		this(pointer, parent, parent.getPlatform());
 	}
 
-	CLDevice(final long pointer, final CLDevice parent, final CLPlatform platform) {
+	CLDevice(final long pointer, final CLDevice parent, final org.lwjgl.opencl.CLPlatform platform) {
 		super(pointer, parent);
 
 		if ( isValid() ) {

@@ -9,22 +9,6 @@
     <artifactId>lwjgl-generator</artifactId>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.ow2.asm</groupId>-->
-<!--            <artifactId>asm</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.ow2.asm</groupId>-->
-<!--            <artifactId>asm-tree</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.ow2.asm</groupId>-->
-<!--            <artifactId>asm-util</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>net.java.jinput</groupId>-->
-<!--            <artifactId>jinput</artifactId>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -40,8 +24,8 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>${maven.compiler.version}</version>
             <configuration>
-                <compilerVersion>8</compilerVersion>
-                <release>8</release>
+<!--                <compilerVersion>8</compilerVersion>-->
+<!--                <release>8</release>-->
                 <source>${maven.compiler.source}</source>
                 <target>${maven.compiler.target}</target>
 <!--                <annotationProcessorPaths>-->

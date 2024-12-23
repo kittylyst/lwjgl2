@@ -11,6 +11,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-generator</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm</artifactId>
         </dependency>
@@ -43,15 +49,15 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>${maven.compiler.version}</version>
             <configuration>
-                <compilerVersion>8</compilerVersion>
-                <release>8</release>
+<!--                <compilerVersion>8</compilerVersion>-->
+<!--                <release>8</release>-->
                 <source>${maven.compiler.source}</source>
                 <target>${maven.compiler.target}</target>
                 <annotationProcessorPaths>
                     <path>
                         <groupId>org.lwjgl</groupId>
-                        <artifactId>lwjgl-processor</artifactId>
-                        <version>${lwjgl.processor.version}</version>
+                        <artifactId>lwjgl-generator</artifactId>
+                        <version>${project.version}</version>
                     </path>
                 </annotationProcessorPaths>
 <!--            <configuration>-->

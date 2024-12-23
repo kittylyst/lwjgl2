@@ -32,7 +32,6 @@
 package org.lwjgl.opencl;
 
 import org.lwjgl.*;
-import org.lwjgl.opencl.FastLongMap.Entry;
 
 import java.nio.*;
 import java.util.HashSet;

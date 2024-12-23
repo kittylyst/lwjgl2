@@ -58,17 +58,17 @@
     <build>
         <pluginManagement/>
         <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>${maven.compiler.version}</version>
-            <configuration>
-                <compilerVersion>8</compilerVersion>
-                <release>8</release>
-                <source>${maven.compiler.source}</source>
-                <target>${maven.compiler.target}</target>
-            </configuration>
-        </plugin>
+<!--        <plugin>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-compiler-plugin</artifactId>-->
+<!--            <version>${maven.compiler.version}</version>-->
+<!--            <configuration>-->
+<!--&lt;!&ndash;                <compilerVersion>8</compilerVersion>&ndash;&gt;-->
+<!--&lt;!&ndash;                <release>8</release>&ndash;&gt;-->
+<!--                <source>${maven.compiler.source}</source>-->
+<!--                <target>${maven.compiler.target}</target>-->
+<!--            </configuration>-->
+<!--        </plugin>-->
         </plugins>
     </build>
 </project>

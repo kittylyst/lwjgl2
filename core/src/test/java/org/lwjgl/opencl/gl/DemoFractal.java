@@ -37,7 +37,6 @@ import org.lwjgl.PointerBuffer;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opencl.*;
-import org.lwjgl.opencl.api.Filter;
 import org.lwjgl.opengl.*;
 import org.lwjgl.util.Color;
 import org.lwjgl.util.ReadableColor;

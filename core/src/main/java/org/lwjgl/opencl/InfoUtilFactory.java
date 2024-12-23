@@ -34,7 +34,6 @@ package org.lwjgl.opencl;
 import org.lwjgl.*;
 import org.lwjgl.opencl.api.CLBufferRegion;
 import org.lwjgl.opencl.api.CLImageFormat;
-import org.lwjgl.opencl.api.Filter;
 import org.lwjgl.opengl.Drawable;
 
 import java.nio.Buffer;
