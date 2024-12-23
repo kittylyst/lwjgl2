@@ -2,7 +2,7 @@
 	<!-- ================================================================== -->
 	<!-- Global properties for build 																				-->
 	<!-- ================================================================== -->
-	<property name="lwjgl.src" 					location="src/main/" />
+	<property name="lwjgl.src" 					location="core/src/main/" />
 	<property name="lwjgl.src.native" 			location="${lwjgl.src}/native" />
 	<property name="lwjgl.src.headers" 			location="${lwjgl.src.native}/common" />
 	<property name="lwjgl.src.templates"		location="${lwjgl.src}/templates" />
