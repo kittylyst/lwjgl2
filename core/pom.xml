@@ -13,6 +13,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>lwjgl-generator</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -43,28 +44,29 @@
     <build>
         <pluginManagement/>
         <plugins>
-        <plugin>
+            <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>${maven.compiler.version}</version>
             <configuration>
 <!--                <compilerVersion>8</compilerVersion>-->
-<!--                <release>8</release>-->
                 <source>${maven.compiler.source}</source>
                 <target>${maven.compiler.target}</target>
-                <annotationProcessorPaths>
-                    <path>
-                        <groupId>org.lwjgl</groupId>
-                        <artifactId>lwjgl-generator</artifactId>
-                        <version>${project.version}</version>
-                    </path>
-<!--                    <processors>-->
-<!--                        <processor>org.lwjgl.util.generator.GeneratorProcessor</processor>-->
-<!--                    </processors>-->
-<!--                    <generatedSourcesDirectory>src/main/generated</generatedSourcesDirectory>-->
-                </annotationProcessorPaths>
-<!--                <compilerArguments>-Abinpath=bin -Atypemap=org.lwjgl.util.generator.openal.ALTypeMap</compilerArguments>-->
-
+<!--                <annotationProcessorPaths>-->
+<!--                    <path>-->
+<!--                        <groupId>org.lwjgl</groupId>-->
+<!--                        <artifactId>lwjgl-generator</artifactId>-->
+<!--                        <version>2.10.0-SNAPSHOT</version>-->
+<!--                    </path>-->
+<!--&lt;!&ndash;                    <processors>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <processor>org.lwjgl.util.generator.GeneratorProcessor</processor>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </processors>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <generatedSourcesDirectory>src/main/generated</generatedSourcesDirectory>&ndash;&gt;-->
+<!--                </annotationProcessorPaths>-->
+                <compilerArgs>
+<!--                    <classpath>${java.class.path}:${project.basedir}/../generator/target/classes</classpath>-->
+                </compilerArgs>
+<!--                    -Abinpath=bin -Atypemap=org.lwjgl.util.generator.openal.ALTypeMap-->
             </configuration>
         </plugin>
         </plugins>

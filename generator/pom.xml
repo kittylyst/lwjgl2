@@ -42,6 +42,7 @@
                         </manifest>
                     </archive>
                     <includes>
+                        <include>**/*.class</include>
                         <include>META-INF/services/javax.annotation.processing.Processor</include>
                     </includes>
                 </configuration>
