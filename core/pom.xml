@@ -64,9 +64,9 @@
 <!--&lt;!&ndash;                    <generatedSourcesDirectory>src/main/generated</generatedSourcesDirectory>&ndash;&gt;-->
 <!--                </annotationProcessorPaths>-->
                 <compilerArgs>
-<!--                    <classpath>${java.class.path}:${project.basedir}/../generator/target/classes</classpath>-->
+                    <arg>-Abinpath=bin</arg>
+                    <arg>-Atypemap=org.lwjgl.util.generator.openal.ALTypeMap</arg>
                 </compilerArgs>
-<!--                    -Abinpath=bin -Atypemap=org.lwjgl.util.generator.openal.ALTypeMap-->
             </configuration>
         </plugin>
         </plugins>
