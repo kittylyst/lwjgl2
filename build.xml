@@ -462,7 +462,7 @@
 
 	<!-- Compiles the Java source code -->
 	<target name="compile" description="Compiles the java source code" depends="-initialize">
-		<javac debug="yes" destdir="${lwjgl.bin}" source="1.5" target="1.5" classpath="${lwjgl.lib}/jinput.jar:${lwjgl.lib}/AppleJavaExtensions.jar:${lwjgl.lib}/asm-6.2.1.jar:${lwjgl.lib}/asm-tree-6.2.1.jar:${lwjgl.lib}/asm-util-6.2.1.jar:${lwjgl.lib}/asm-analysis-6.2.1.jar" taskname="core">
+		<javac debug="yes" destdir="${lwjgl.bin}" source="8" target="8" classpath="${lwjgl.lib}/jinput.jar:${lwjgl.lib}/AppleJavaExtensions.jar:${lwjgl.lib}/asm-6.2.1.jar:${lwjgl.lib}/asm-tree-6.2.1.jar:${lwjgl.lib}/asm-util-6.2.1.jar:${lwjgl.lib}/asm-analysis-6.2.1.jar" taskname="core">
             <!--<compilerarg value="-Xlint:unchecked"/>-->
 			<src path="${lwjgl.src}/java/"/>
 			<src path="${lwjgl.src}/generated/"/>
@@ -475,8 +475,8 @@
 			<include name="org/lwjgl/util/**"/>
 			<exclude name="org/lwjgl/util/generator/**"/>
 		</javac>
-		<javac debug="yes" srcdir="${lwjgl.src}/java/" destdir="${lwjgl.bin}" includes="org/lwjgl/test/**" source="1.5" target="1.5" taskname="test" />
-		<javac debug="yes" srcdir="${lwjgl.src}/java/" destdir="${lwjgl.bin}" includes="org/lwjgl/examples/**" source="1.5" target="1.5" taskname="examples" />
+		<javac debug="yes" srcdir="${lwjgl.src}/java/" destdir="${lwjgl.bin}" includes="org/lwjgl/test/**" source="8" target="8" taskname="test" />
+		<javac debug="yes" srcdir="${lwjgl.src}/java/" destdir="${lwjgl.bin}" includes="org/lwjgl/examples/**" source="8" target="8" taskname="examples" />
 	</target>
 
 	<target name="compile_native" depends="-initialize, headers, touch-version, version-mismatch" description="Compiles the native files">
@@ -671,7 +671,7 @@
 
 	<!-- Creates the Javadoc -->
 	<target name="javadoc" description="Creates javadoc from java source code">
-		<javadoc destdir="${lwjgl.docs}/javadoc" classpath="${lwjgl.lib}/jinput.jar" author="true" version="true" use="true" source="1.5" windowtitle="LWJGL API" useexternalfile="true">
+		<javadoc destdir="${lwjgl.docs}/javadoc" classpath="${lwjgl.lib}/jinput.jar" author="true" version="true" use="true" source="8" windowtitle="LWJGL API" useexternalfile="true">
 			<fileset refid="lwjgl.javadoc.fileset" />
 			<doctitle><![CDATA[<h1>Lightweight Java Game Toolkit</h1>]]></doctitle>
 			<bottom><![CDATA[<i>Copyright &#169; 2002-2009 lwjgl.org. All Rights Reserved.</i>]]></bottom>

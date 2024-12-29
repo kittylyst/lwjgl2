@@ -58,7 +58,15 @@
 		</condition>
 
 		<!-- Choose a MacOSX SDK -->
+		<!-- These need to be kept up to date with MacOS header file changes -->
 		<property name="compiler" value="clang"/> <!-- Default to clang for 10.8 and up -->
+
+		<condition property="sdkroot" value="${developer_path}/${sdk_path}/MacOSX15.1.sdk">
+			<and>
+				<not><isset property="sdkroot"/></not>
+				<available file="${developer_path}/${sdk_path}/MacOSX15.1.sdk" type="dir"/>
+			</and>
+		</condition>
 
 		<condition property="sdkroot" value="${developer_path}/${sdk_path}/MacOSX14.4.sdk">
 			<and>
@@ -67,6 +75,7 @@
 			</and>
 		</condition>
 
+		<!-- Untested below here -->
 		<condition property="sdkroot" value="${developer_path}/${sdk_path}/MacOSX10.9.sdk">
 			<and>
 				<not><isset property="sdkroot"/></not>
