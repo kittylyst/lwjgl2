@@ -54,10 +54,10 @@ import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.type.TypeKind;
 
 public class ALTypeMap implements TypeMap {
-	private static final Map<Class, TypeKind> native_types_to_primitive;
+	private static final Map<Class<?>, TypeKind> native_types_to_primitive;
 
 	static {
-		native_types_to_primitive = new HashMap<Class, TypeKind>();
+		native_types_to_primitive = new HashMap<>();
 		native_types_to_primitive.put(ALboolean.class, TypeKind.BOOLEAN);
 		native_types_to_primitive.put(ALbyte.class, TypeKind.BYTE);
 		native_types_to_primitive.put(ALenum.class, TypeKind.INT);
@@ -72,7 +72,7 @@ public class ALTypeMap implements TypeMap {
 	}
 
 	@Override
-	public TypeKind getPrimitiveTypeFromNativeType(Class native_type) {
+	public TypeKind getPrimitiveTypeFromNativeType(Class<? extends Annotation> native_type) {
 		TypeKind kind = native_types_to_primitive.get(native_type);
 		if ( kind == null )
 			throw new RuntimeException("Unsupported type " + native_type);
@@ -80,7 +80,7 @@ public class ALTypeMap implements TypeMap {
 	}
 
 	@Override
-	public Signedness getSignednessFromType(Class type) {
+	public Signedness getSignednessFromType(Class<? extends Annotation> type) {
 		if ( ALuint.class.equals(type) )
 			return Signedness.UNSIGNED;
 		else if ( ALint.class.equals(type) )
@@ -94,7 +94,7 @@ public class ALTypeMap implements TypeMap {
 	}
 
 	@Override
-	public String translateAnnotation(Class annotation_type) {
+	public String translateAnnotation(Class<? extends Annotation> annotation_type) {
 		if ( annotation_type.equals(ALuint.class) )
 			return "i";
 		else if ( annotation_type.equals(ALint.class) )
@@ -114,8 +114,8 @@ public class ALTypeMap implements TypeMap {
 	}
 
 	@Override
-	public Class getNativeTypeFromPrimitiveType(TypeKind kind) {
-		Class type;
+	public Class<?> getNativeTypeFromPrimitiveType(TypeKind kind) {
+		Class<?> type;
 		switch ( kind ) {
 			case INT:
 				type = ALint.class;
@@ -141,7 +141,7 @@ public class ALTypeMap implements TypeMap {
 		return type;
 	}
 
-	private static Class[] getValidBufferTypes(Class type) {
+	private static Class[] getValidBufferTypes(Class<?> type) {
 		if ( type.equals(IntBuffer.class) )
 			return new Class[] { ALenum.class, ALint.class, ALsizei.class, ALuint.class };
 		else if ( type.equals(FloatBuffer.class) )

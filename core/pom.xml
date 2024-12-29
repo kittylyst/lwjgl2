@@ -52,7 +52,7 @@
 <!--                <compilerVersion>8</compilerVersion>-->
                 <source>${maven.compiler.source}</source>
                 <target>${maven.compiler.target}</target>
-<!--                <annotationProcessorPaths>-->
+                <!--                <annotationProcessorPaths>-->
 <!--                    <path>-->
 <!--                        <groupId>org.lwjgl</groupId>-->
 <!--                        <artifactId>lwjgl-generator</artifactId>-->
@@ -64,8 +64,10 @@
 <!--&lt;!&ndash;                    <generatedSourcesDirectory>src/main/generated</generatedSourcesDirectory>&ndash;&gt;-->
 <!--                </annotationProcessorPaths>-->
                 <compilerArgs>
+<!--                    This only does the OpenAL templates - we need to do them all-->
                     <arg>-Abinpath=bin</arg>
                     <arg>-Atypemap=org.lwjgl.util.generator.openal.ALTypeMap</arg>
+                    <!-- Need to supply the appropriate template directory - templates/org/lwjgl/openal/ -->
                 </compilerArgs>
             </configuration>
         </plugin>

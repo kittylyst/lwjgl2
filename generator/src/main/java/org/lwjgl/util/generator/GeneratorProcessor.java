@@ -81,6 +81,7 @@ public class GeneratorProcessor extends AbstractProcessor {
 			TypeMap type_map = (TypeMap)(Class.forName(typemap_classname).newInstance());
 			for ( Iterator<TypeElement> it = ElementFilter.typesIn(roundEnv.getRootElements()).iterator(); it.hasNext(); ) {
 				lastFile = it.next();
+				System.out.println(lastFile);
 				lastFile.accept(new GeneratorVisitor(processingEnv, type_map, generate_error_checks, context_specific, generatorLM), null);
 			}
 			firstRound = false;
