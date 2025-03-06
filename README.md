@@ -68,6 +68,20 @@ sudo cp libs/linux/liblwjgl64.so /lib64
 
 and then install the jar file to local Maven, as above.
 
+### Raspberry Pi (AArch32)
+
+Check for OpenGL via:
+
+```bash
+ls /usr/include/GL/gl.h /usr/include/GL/glu.h
+```
+
+If not found then:
+
+```bash
+FIXME
+```
+
 ### Ubuntu
 
 FIXME
