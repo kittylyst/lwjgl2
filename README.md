@@ -55,7 +55,7 @@ ls /usr/include/GL/gl.h /usr/include/GL/glu.h
 and if not then install via:
 
 ```bash
-sudo dnf install freeglut-devel mesa-libGL-devel mesa-libGLU-devel
+sudo dnf install freeglut-devel mesa-libGL-devel mesa-libGLU-devel libXt-devel libXrandr
 sudo dnf -y install libXcursor-devel
 sudo dnf -y install libXxf86vm-devel
 ```
