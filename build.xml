@@ -18,6 +18,7 @@
 	<!-- Initialize build			 										-->
 	<!-- ================================================================== -->
 	<target name="-initialize">
+		<echo>Processor architecture: ${os.arch}</echo>
 		<mkdir dir="${lwjgl.bin}"                   taskname="initialiazing bin folder" />
 		<mkdir dir="${lwjgl.bin}/lwjgl"             taskname="initialiazing native bin folder" />
 		<mkdir dir="${lwjgl.bin}/lwjgles"           taskname="initialiazing native OpenGL ES bin folder"/>
