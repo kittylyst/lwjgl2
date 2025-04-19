@@ -18,7 +18,6 @@
 	</target>
 
     <target name="compile">
-		<antcall target="detect-arch"/>
 
 		<exec executable="uname" outputproperty="hwplatform">
 			<arg value="-m"/>
@@ -66,20 +65,7 @@
     	<antcall target="compile32"/>
     	<antcall target="compile64"/>
     </target>
-
-	<target name="detect-arch">
-		<!-- Set processor.arch property based on os.arch value -->
-		<condition property="processor.arch" value="x86_64">
-			<equals arg1="${os.arch}" arg2="amd64"/>
-		</condition>
-		<condition property="processor.arch" value="x86">
-			<equals arg1="${os.arch}" arg2="x86"/>
-		</condition>
-		<!-- Fallback: use the raw os.arch value -->
-		<property name="processor.arch" value="${os.arch}" />
-		<echo>In compile64: ${os.arch}</echo>
-	</target>
-
+	
     <target name="compile32" unless="build.64bit.only">
     	<mkdir dir="x32"/>
     	<apply dir="x32" executable="gcc" skipemptyfilesets="true" failonerror="true" parallel="true">
