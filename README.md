@@ -28,14 +28,6 @@ asm-util-6.2.1.jar
 jinput.jar
 ```
 
-After building, you may need to install the library locally to make it available to games built with Maven or Gradle:
-
-```bash
-mvn install:install-file -Dfile=libs/lwjgl.jar -DgroupId=org.lwjgl -DartifactId=lwjgl -Dversion=2.9.4 -Dpackaging=jar
-
-mvn install:install-file -Dfile=libs/lwjgl_util.jar -DgroupId=org.lwjgl -DartifactId=lwjgl-util -Dversion=2.9.4 -Dpackaging=jar
-```
-
 ### MacOS
 
 Install XCode (why yes, I would like to do a 3G download to install a few KB of header files for my build.)
@@ -56,6 +48,9 @@ and if not then install via:
 
 ```bash
 sudo dnf install freeglut-devel mesa-libGL-devel mesa-libGLU-devel
+```
+
+```bash
 sudo dnf -y install libXcursor-devel
 sudo dnf -y install libXxf86vm-devel
 ```
@@ -82,13 +77,21 @@ If not found then:
 FIXME
 ```
 
+Install some more headers:
+
+```bash
+sudo apt-get install libxxf86vm-dev
+sudo apt-get install libxrandr-dev # X11/extensions/Xrandr.h
+sudo apt-get install libxcursor-dev # Do we need this?
+```
+
 After building using ant, you will then need to install the native library:
 
 ```bash
 sudo cp libs/linux/liblwjgl.so /usr/lib
 ```
 
-and then install the jar file to local Maven, as above.
+and then install the jar file to local Maven, as below.
 
 
 ### Ubuntu
@@ -98,3 +101,13 @@ FIXME
 ### Windows
 
 FIXME
+
+## Installing
+
+After building, you may need to install the library locally to make it available to games built with Maven or Gradle:
+
+```bash
+mvn install:install-file -Dfile=libs/lwjgl.jar -DgroupId=org.lwjgl -DartifactId=lwjgl -Dversion=2.9.4 -Dpackaging=jar
+
+mvn install:install-file -Dfile=libs/lwjgl_util.jar -DgroupId=org.lwjgl -DartifactId=lwjgl-util -Dversion=2.9.4 -Dpackaging=jar
+```
