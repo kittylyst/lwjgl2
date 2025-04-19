@@ -28,6 +28,8 @@ asm-util-6.2.1.jar
 jinput.jar
 ```
 
+Note that JInput relies upon native code, which is not needed to build LWJGL, but will need to be present at runtime.
+
 ### MacOS
 
 Install XCode (why yes, I would like to do a 3G download to install a few KB of header files for my build.)
@@ -50,6 +52,8 @@ and if not then install via:
 sudo dnf install freeglut-devel mesa-libGL-devel mesa-libGLU-devel
 ```
 
+Then install a couple of additional libraries:
+
 ```bash
 sudo dnf -y install libXcursor-devel
 sudo dnf -y install libXxf86vm-devel
@@ -63,7 +67,7 @@ sudo cp libs/linux/liblwjgl64.so /lib64
 
 and then install the jar file to local Maven, as above.
 
-### Raspberry Pi (AArch32)
+### Raspberry Pi (AArch32 or AArch64)
 
 Check for OpenGL via:
 
@@ -88,7 +92,7 @@ sudo apt-get install libxcursor-dev # Do we need this?
 After building using ant, you will then need to install the native library:
 
 ```bash
-sudo cp libs/linux/liblwjgl.so /usr/lib
+sudo cp libs/linux/liblwjgl64.so /usr/lib
 ```
 
 and then install the jar file to local Maven, as below.
