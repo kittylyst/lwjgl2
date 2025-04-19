@@ -82,6 +82,15 @@ If not found then:
 FIXME
 ```
 
+After building using ant, you will then need to install the native library:
+
+```bash
+sudo cp libs/linux/liblwjgl.so /usr/lib
+```
+
+and then install the jar file to local Maven, as above.
+
+
 ### Ubuntu
 
 FIXME
