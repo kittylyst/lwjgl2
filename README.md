@@ -57,6 +57,8 @@ Then install a couple of additional libraries:
 ```bash
 sudo dnf -y install libXcursor-devel
 sudo dnf -y install libXxf86vm-devel
+sudo dnf install xrandr
+# sudo dnf install libXrandr
 ```
 
 After building using ant, you will then need to install the native library:
@@ -86,6 +88,7 @@ Install some more headers:
 ```bash
 sudo apt-get install libxxf86vm-dev
 sudo apt-get install libxrandr-dev # X11/extensions/Xrandr.h
+#sudo apt-get install x11-xserver-utils # Do we need this?
 sudo apt-get install libxcursor-dev # Do we need this?
 ```
 
