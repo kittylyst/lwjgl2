@@ -16,6 +16,8 @@ Follow the system-specific instructions. General notes:
 
 * Uses ant (ugh).
 
+* Must be built with Java 8 (and no higher)
+
 * Requires OpenGL to be installed
 
 The ASM and jinput jars should be placed in the `libs` dir:
@@ -28,13 +30,7 @@ asm-util-6.2.1.jar
 jinput.jar
 ```
 
-After building, you may need to install the library locally to make it available to games built with Maven or Gradle:
-
-```bash
-mvn install:install-file -Dfile=libs/lwjgl.jar -DgroupId=org.lwjgl -DartifactId=lwjgl -Dversion=2.9.4 -Dpackaging=jar
-
-mvn install:install-file -Dfile=libs/lwjgl_util.jar -DgroupId=org.lwjgl -DartifactId=lwjgl-util -Dversion=2.9.4 -Dpackaging=jar
-```
+Note that JInput relies upon native code, which is not needed to build LWJGL, but will need to be present at runtime.
 
 ### MacOS
 
@@ -54,10 +50,14 @@ ls /usr/include/GL/gl.h /usr/include/GL/glu.h
 
 and if not then install via:
 
+```bash 
+sudo dnf install freeglut-devel mesa-libGL-devel mesa-libGLU-devel
+```
+
+Then install a couple of additional libraries:
+
 ```bash
-sudo dnf install freeglut-devel mesa-libGL-devel mesa-libGLU-devel libXt-devel libXrandr
-sudo dnf -y install libXcursor-devel
-sudo dnf -y install libXxf86vm-devel
+sudo dnf -y install libXcursor-devel libXt-devel libXxf86vm-devel xrandr
 ```
 
 After building using ant, you will then need to install the native library:
@@ -68,6 +68,38 @@ sudo cp libs/linux/liblwjgl64.so /lib64
 
 and then install the jar file to local Maven, as above.
 
+### Raspberry Pi (AArch32 or AArch64)
+
+Check for OpenGL via:
+
+```bash
+ls /usr/include/GL/gl.h /usr/include/GL/glu.h
+```
+
+If not found then:
+
+```bash
+FIXME
+```
+
+Install some more headers:
+
+```bash
+sudo apt-get install libxxf86vm-dev
+sudo apt-get install libxrandr-dev # X11/extensions/Xrandr.h
+#sudo apt-get install x11-xserver-utils # Do we need this?
+sudo apt-get install libxcursor-dev # Do we need this?
+```
+
+After building using ant, you will then need to install the native library:
+
+```bash
+sudo cp libs/linux/liblwjgl64.so /usr/lib
+```
+
+and then install the jar file to local Maven, as below.
+
+
 ### Ubuntu
 
 FIXME
@@ -75,3 +107,13 @@ FIXME
 ### Windows
 
 FIXME
+
+## Installing
+
+After building, you may need to install the library locally to make it available to games built with Maven or Gradle:
+
+```bash
+mvn install:install-file -Dfile=libs/lwjgl.jar -DgroupId=org.lwjgl -DartifactId=lwjgl -Dversion=2.9.4 -Dpackaging=jar
+
+mvn install:install-file -Dfile=libs/lwjgl_util.jar -DgroupId=org.lwjgl -DartifactId=lwjgl-util -Dversion=2.9.4 -Dpackaging=jar
+```
