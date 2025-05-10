@@ -42,7 +42,7 @@
 		<!-- EXTENSION SECTION -->
 		<move todir="${lwjgl.temp}/webstart/${lwjgl.version}/" flatten="true">
 			<fileset dir="${lwjgl.temp}/webstart/temp">
-				<include name="**/jinput.jar"/>
+				<include name="**/jinput-${maven.jinput.version}.jar"/>
 				<include name="**/lwjgl*.jar"/>
 				<exclude name="**/lwjgl_util_applet.jar"/>
 				<exclude name="**/lwjgl-debug.jar"/>
@@ -64,7 +64,7 @@
 			</manifest>
 		</jar>
 		
-		<jar destfile="${lwjgl.temp}/webstart/${lwjgl.version}/jinput.jar" update="true">
+		<jar destfile="${lwjgl.temp}/webstart/${lwjgl.version}/jinput-${maven.jinput.version}.jar" update="true">
 			<manifest>
 				<attribute name="Specification-Title" 			value="LWJGL ${lwjgl.version}"/>
 				<attribute name="Specification-Version" 		value="${lwjgl.version}"/>
@@ -158,7 +158,7 @@
 		<!-- sign 'em -->
 		<signjar jar="${lwjgl.temp}/webstart/${lwjgl.version}/lwjgl.jar" 						alias="${alias}" keystore="${keystore}" storepass="${password}"/>
 		<signjar jar="${lwjgl.temp}/webstart/${lwjgl.version}/lwjgl_util.jar" 			alias="${alias}" keystore="${keystore}" storepass="${password}"/>
-		<signjar jar="${lwjgl.temp}/webstart/${lwjgl.version}/jinput.jar" 					alias="${alias}" keystore="${keystore}" storepass="${password}"/>
+		<signjar jar="${lwjgl.temp}/webstart/${lwjgl.version}/jinput-${maven.jinput.version}.jar" 					alias="${alias}" keystore="${keystore}" storepass="${password}"/>
 		<signjar jar="${lwjgl.temp}/webstart/${lwjgl.version}/native_solaris.jar" 	alias="${alias}" keystore="${keystore}" storepass="${password}"/>
 		<signjar jar="${lwjgl.temp}/webstart/${lwjgl.version}/native_linux.jar" 		alias="${alias}" keystore="${keystore}" storepass="${password}"/>
 		<signjar jar="${lwjgl.temp}/webstart/${lwjgl.version}/native_macosx.jar" 		alias="${alias}" keystore="${keystore}" storepass="${password}"/>

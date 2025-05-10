@@ -1,6 +1,8 @@
-<project name="LWJGL" default="all" basedir=".">
+<project name="LWJGL" default="all" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
 
 	<property name="build.sysclasspath" value="last" />
+	<property name="maven.jinput.version" value="2.0.11-SNAPSHOT" />
+	<property name="maven.asm.version" value="6.2.1" />
 
 	<import file="platform_build/build-definitions.xml"/>
 	<import file="platform_build/build-generator.xml"/>
@@ -8,6 +10,11 @@
 	<import file="platform_build/build-webstart.xml"/>
 	<import file="platform_build/build-maven.xml"/>
 	<!-- <import file="eclipse-update/org.lwjgl.build/build-updatesite.xml"/> -->
+
+	<path id="maven-ant-tasks.classpath" path="lib/maven-ant-tasks-2.1.3.jar" />
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+			 uri="antlib:org.apache.maven.artifact.ant"
+			 classpathref="maven-ant-tasks.classpath" />
 
 	<!-- ================================================================== -->
 	<!-- Everything below this line is targets.								-->
@@ -37,6 +44,17 @@
 		<mkdir dir="${lwjgl.temp}/native/openbsd"   taskname="initialiazing temp/openbsd folder" />
 		<mkdir dir="${lwjgl.temp}/native/macosx"    taskname="initialiazing temp/macosx folder" />
 		<mkdir dir="${lwjgl.temp}/native/solaris"   taskname="initialiazing temp/solaris folder" />
+		<artifact:dependencies pathId="maven.dependencies">
+			<remoteRepository id="mavenCentral" url="https://repo1.maven.org/maven2"/>
+			<dependency groupId="net.java.jinput" artifactId="jinput" version="${maven.jinput.version}"/>
+			<dependency groupId="org.ow2.asm" artifactId="asm" version="${maven.asm.version}"/>
+			<dependency groupId="org.ow2.asm" artifactId="asm-tree" version="${maven.asm.version}"/>
+			<dependency groupId="org.ow2.asm" artifactId="asm-util" version="${maven.asm.version}"/>
+			<dependency groupId="org.ow2.asm" artifactId="asm-analysis" version="${maven.asm.version}"/>
+		</artifact:dependencies>
+		<copy todir="libs">
+			<path refid="maven.dependencies"/>
+		</copy>
 	</target>
 
 	<!-- Cleans up any files created during the execution of this script -->
@@ -463,7 +481,7 @@
 
 	<!-- Compiles the Java source code -->
 	<target name="compile" description="Compiles the java source code" depends="-initialize">
-		<javac debug="yes" destdir="${lwjgl.bin}" source="8" target="8" classpath="${lwjgl.lib}/jinput.jar:${lwjgl.lib}/AppleJavaExtensions.jar:${lwjgl.lib}/asm-6.2.1.jar:${lwjgl.lib}/asm-tree-6.2.1.jar:${lwjgl.lib}/asm-util-6.2.1.jar:${lwjgl.lib}/asm-analysis-6.2.1.jar" taskname="core">
+		<javac debug="yes" destdir="${lwjgl.bin}" source="8" target="8" classpath="${lwjgl.lib}/jinput-${maven.jinput.version}.jar:${lwjgl.lib}/AppleJavaExtensions.jar:${lwjgl.lib}/asm-${maven.asm.version}.jar:${lwjgl.lib}/asm-tree-${maven.asm.version}.jar:${lwjgl.lib}/asm-util-${maven.asm.version}.jar:${lwjgl.lib}/asm-analysis-${maven.asm.version}.jar" taskname="core">
             <!--<compilerarg value="-Xlint:unchecked"/>-->
 			<src path="${lwjgl.src}/java/"/>
 			<src path="${lwjgl.src}/generated/"/>
@@ -663,7 +681,7 @@
 			<os name="Mac OS X" />
 		</condition>
 		<property name="native_path_expanded" location="${native_path}"/>
-		<java classname="${test.mainclass}" classpath="res:${lwjgl.lib}/lwjgl.jar:${lwjgl.lib}/lwjgl_util.jar:${lwjgl.lib}/lwjgl_test.jar:${lwjgl.lib}/jinput.jar" fork="true">
+		<java classname="${test.mainclass}" classpath="res:${lwjgl.lib}/lwjgl.jar:${lwjgl.lib}/lwjgl_util.jar:${lwjgl.lib}/lwjgl_test.jar:${lwjgl.lib}/jinput-${maven.jinput.version}.jar" fork="true">
 			<sysproperty key="org.lwjgl.util.Debug" value="true"/>
 			<sysproperty key="java.library.path" value="${native_path_expanded}"/>
 			<arg line="${args}"/>
@@ -672,7 +690,7 @@
 
 	<!-- Creates the Javadoc -->
 	<target name="javadoc" description="Creates javadoc from java source code">
-		<javadoc destdir="${lwjgl.docs}/javadoc" classpath="${lwjgl.lib}/jinput.jar" author="true" version="true" use="true" source="8" windowtitle="LWJGL API" useexternalfile="true">
+		<javadoc destdir="${lwjgl.docs}/javadoc" classpath="${lwjgl.lib}/jinput-${maven.jinput.version}.jar" author="true" version="true" use="true" source="8" windowtitle="LWJGL API" useexternalfile="true">
 			<fileset refid="lwjgl.javadoc.fileset" />
 			<doctitle><![CDATA[<h1>Lightweight Java Game Toolkit</h1>]]></doctitle>
 			<bottom><![CDATA[<i>Copyright &#169; 2002-2009 lwjgl.org. All Rights Reserved.</i>]]></bottom>

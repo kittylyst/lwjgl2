@@ -68,40 +68,13 @@
 		<copy file="${lwjgl.lib}/lwjgl-debug.jar" todir="applet/basic" overwrite="true"/>
 		<copy file="${lwjgl.lib}/lwjgl_util_applet.jar" todir="applet/basic" overwrite="true"/>
 		<copy file="${lwjgl.lib}/lwjgl_util.jar" todir="applet/basic" overwrite="true"/>
-		<copy file="${lwjgl.lib}/jinput.jar" todir="applet/basic" overwrite="true"/>
+		<copy file="${lwjgl.lib}/jinput-${maven.jinput.version}.jar" todir="applet/basic" overwrite="true"/>
 		<copy file="${lwjgl.lib}/lzma.jar" todir="applet/advance" overwrite="true"/>
 		
 		<signjar jar="applet/basic/lwjgl_util_applet.jar" alias="${alias}" keystore="${keystore}" storepass="${password}"/>
 		<signjar jar="applet/advance/lzma.jar" alias="${alias}" keystore="${keystore}" storepass="${password}"/>
 		<copy file="applet/basic/lwjgl_util_applet.jar" todir="applet/advance" overwrite="true"/>
 
-		<!-- LZMA only, for 1.4 only clients -->
-		<!--antcall target="compress-resource">
-			<param name="input" value="applet/basic/lwjgl.jar"/>
-			<param name="output" value="applet/advance/lwjgl.jar.lzma"/>
-		</antcall>
-		<antcall target="compress-resource">
-			<param name="input" value="applet/basic/lwjgl-debug.jar"/>
-			<param name="output" value="applet/advance/lwjgl-debug.jar.lzma"/>
-		</antcall>
-		
-		<antcall target="compress-resource">
-			<param name="input" value="applet/basic/lwjgl_util.jar"/>
-			<param name="output" value="applet/advance/lwjgl_util.jar.lzma"/>
-		</antcall>
-		<antcall target="compress-resource">
-			<param name="input" value="applet/basic/jinput.jar"/>
-			<param name="output" value="applet/advance/jinput.jar.lzma"/>
-		</antcall>
-		<antcall target="compress-resource">
-			<param name="input" value="applet/basic/lwjgl_applet.jar"/>
-			<param name="output" value="applet/advance/lwjgl_applet.jar.lzma"/>
-		</antcall>
-		<antcall target="compress-resource">
-			<param name="input" value="applet/basic/windows_natives.jar"/>
-			<param name="output" value="applet/advance/windows_natives.jar.lzma"/>
-		</antcall -->
-		
 		<antcall target="compress-sign-class">
 			<param name="dir" value="applet/basic/"/>
 			<param name="outputdir" value="applet/advance/"/>
@@ -120,7 +93,7 @@
 		<antcall target="compress-sign-class">
 			<param name="dir" value="applet/basic/"/>
 			<param name="outputdir" value="applet/advance/"/>
-			<param name="jarfile" value="jinput"/>
+			<param name="jarfile" value="jinput-${maven.jinput.version}"/>
 		</antcall>
 		<antcall target="compress-sign-class">
 			<param name="dir" value="applet/basic/"/>
