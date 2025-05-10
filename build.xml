@@ -45,6 +45,7 @@
 		<mkdir dir="${lwjgl.temp}/native/macosx"    taskname="initialiazing temp/macosx folder" />
 		<mkdir dir="${lwjgl.temp}/native/solaris"   taskname="initialiazing temp/solaris folder" />
 		<artifact:dependencies pathId="maven.dependencies">
+			<remoteRepository id="mavenCentral" url="https://repo1.maven.org/maven2"/>
 			<dependency groupId="net.java.jinput" artifactId="jinput" version="${maven.jinput.version}"/>
 			<dependency groupId="org.ow2.asm" artifactId="asm" version="${maven.asm.version}"/>
 			<dependency groupId="org.ow2.asm" artifactId="asm-tree" version="${maven.asm.version}"/>
