@@ -16,6 +16,8 @@ Follow the system-specific instructions. General notes:
 
 * Uses ant (ugh).
 
+* Must be built with Java 8 (and no higher)
+
 * Requires OpenGL to be installed
 
 The ASM and jinput jars should be placed in the `libs` dir:
@@ -48,17 +50,14 @@ ls /usr/include/GL/gl.h /usr/include/GL/glu.h
 
 and if not then install via:
 
-```bash
+```bash 
 sudo dnf install freeglut-devel mesa-libGL-devel mesa-libGLU-devel
 ```
 
 Then install a couple of additional libraries:
 
 ```bash
-sudo dnf -y install libXcursor-devel
-sudo dnf -y install libXxf86vm-devel
-sudo dnf install xrandr
-# sudo dnf install libXrandr
+sudo dnf -y install libXcursor-devel libXt-devel libXxf86vm-devel xrandr
 ```
 
 After building using ant, you will then need to install the native library:
