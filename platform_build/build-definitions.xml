@@ -8,12 +8,13 @@
 	<property name="lwjgl.src.templates"		location="${lwjgl.src}/templates" />
 	<property name="lwjgl.bin" 					location="bin" />
 	<property name="lwjgl.lib" 					location="libs" />
+	<property name="lwjgl.target" 				location="target" />
 	<property name="lwjgl.dist" 				location="dist" />
 	<property name="lwjgl.docs" 				location="doc" />
 	<property name="lwjgl.temp" 				location="temp" />
 	<property name="lwjgl.res" 					location="res" />
 	<property name="lwjgl.version" 				value="2.9.4" />
-	<property name="lwjgl.web" 						location="www" />
+	<property name="lwjgl.web" 					location="www" />
 
 	<property name="lwjgl.src.templates.al" location="${lwjgl.src.templates}/org/lwjgl/openal"/>
 	<property name="lwjgl.src.templates.gl" location="${lwjgl.src.templates}/org/lwjgl/opengl"/>
