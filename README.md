@@ -100,6 +100,7 @@ sudo cp libs/linux/liblwjgl64.so /usr/lib
 
 and then install the jar file to local Maven, as below.
 
+You will also need to ensure that the RPi boots into X11 mode, not Wayland, or `XOpenDisplay()` will hang.
 
 ### Ubuntu
 
