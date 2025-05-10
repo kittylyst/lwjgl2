@@ -16,6 +16,8 @@ Follow the system-specific instructions. General notes:
 
 * Uses ant (ugh).
 
+* Must be built with Java 8 (and no higher)
+
 * Requires OpenGL to be installed
 
 The ASM and jinput jars should be placed in the `libs` dir:
@@ -48,15 +50,14 @@ ls /usr/include/GL/gl.h /usr/include/GL/glu.h
 
 and if not then install via:
 
-```bash
+```bash 
 sudo dnf install freeglut-devel mesa-libGL-devel mesa-libGLU-devel
 ```
 
 Then install a couple of additional libraries:
 
 ```bash
-sudo dnf -y install libXcursor-devel
-sudo dnf -y install libXxf86vm-devel
+sudo dnf -y install libXcursor-devel libXt-devel libXxf86vm-devel xrandr
 ```
 
 After building using ant, you will then need to install the native library:
@@ -86,6 +87,7 @@ Install some more headers:
 ```bash
 sudo apt-get install libxxf86vm-dev
 sudo apt-get install libxrandr-dev # X11/extensions/Xrandr.h
+#sudo apt-get install x11-xserver-utils # Do we need this?
 sudo apt-get install libxcursor-dev # Do we need this?
 ```
 
@@ -97,6 +99,7 @@ sudo cp libs/linux/liblwjgl64.so /usr/lib
 
 and then install the jar file to local Maven, as below.
 
+You will also need to ensure that the RPi boots into X11 mode, not Wayland, or `XOpenDisplay()` will hang.
 
 ### Ubuntu
 

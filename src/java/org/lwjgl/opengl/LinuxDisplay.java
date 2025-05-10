@@ -939,29 +939,33 @@ final class LinuxDisplay implements DisplayImplementation {
 	public DisplayMode[] getAvailableDisplayModes() throws LWJGLException {
 		lockAWT();
 		try {
-                        incDisplay();
-                        if (current_displaymode_extension == XRANDR) {
-                                // nGetAvailableDisplayModes cannot be trusted. Use it only for bitsPerPixel
-                                DisplayMode[] nDisplayModes = nGetAvailableDisplayModes(getDisplay(), getDefaultScreen(), current_displaymode_extension);
-                                int bpp = 24;
-                                if (nDisplayModes.length > 0) {
-                                    bpp = nDisplayModes[0].getBitsPerPixel();
-                                }
-                                // get the resolutions and frequencys from XRandR
-                                Screen[] resolutions = XRandR.getResolutions(XRandR.getScreenNames()[0]);
-                                DisplayMode[] modes = new DisplayMode[resolutions.length];
-                                for (int i = 0; i < modes.length; i++) {
-                                    modes[i] = new DisplayMode(resolutions[i].width, resolutions[i].height, bpp, resolutions[i].freq);
-                                }
-                                return modes;
-                        } else {
-                                try {
-                                        DisplayMode[] modes = nGetAvailableDisplayModes(getDisplay(), getDefaultScreen(), current_displaymode_extension);
-                                        return modes;
-                                } finally {
-                                        decDisplay();
-                                }
-                        }
+			incDisplay();
+			if (current_displaymode_extension == XRANDR) {
+				// nGetAvailableDisplayModes cannot be trusted. Use it only for bitsPerPixel
+				DisplayMode[] nDisplayModes = nGetAvailableDisplayModes(getDisplay(), getDefaultScreen(), current_displaymode_extension);
+				int bpp = 24;
+				if (nDisplayModes.length > 0) {
+					bpp = nDisplayModes[0].getBitsPerPixel();
+				}
+				// get the resolutions and frequencies from XRandR
+				String[] screenNames = XRandR.getScreenNames();
+				if (screenNames.length == 0) {
+					throw new LWJGLException("No screen names available - check xrandr (including CLI tool) is installed");
+				}
+				Screen[] resolutions = XRandR.getResolutions(screenNames[0]);
+				DisplayMode[] modes = new DisplayMode[resolutions.length];
+				for (int i = 0; i < modes.length; i++) {
+					modes[i] = new DisplayMode(resolutions[i].width, resolutions[i].height, bpp, resolutions[i].freq);
+				}
+				return modes;
+			} else {
+				try {
+					DisplayMode[] modes = nGetAvailableDisplayModes(getDisplay(), getDefaultScreen(), current_displaymode_extension);
+					return modes;
+				} finally {
+					decDisplay();
+				}
+			}
 		} finally {
 			unlockAWT();
 		}
